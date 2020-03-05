@@ -26,11 +26,11 @@ class InjectionController extends AbstractController
         }
 
         $logger = new Logger();
-        $logger->log($master->mightyMorphingTransformer($_POST['input'] ?? ""));
+        $logger->log($master->mightyMorphingTransformer($_POST['input']));
 
         return $this->render('injection/index.html.twig', [
             'controller_name' => 'InjectionController',
-            'output' => $master->mightyMorphingTransformer($_POST['input'] ?? "")
+            'output' => $master->mightyMorphingTransformer($_POST['input'])
         ]);
     }
 }
