@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello InjectionController!{% endblock %}
+{% block title %}Transformers{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,16 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <form method="post">
+        <label for="capitaliser">Xbox live username transformer:</label>
+        <input type="text" id="capitaliser" name ="capitaliser">
+        <br>
+        <label for="dasher">Spaces to dashes:</label>
+        <input type="text" id="dasher" name="dasher">
+        <button type="submit">GO</button>
+    </form>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/dependency/src/Controller/InjectionController.php'|file_link(0) }}">src/Controller/InjectionController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/dependency/templates/injection/index.html.twig'|file_link(0) }}">templates/injection/index.html.twig</a></code></li>
-    </ul>
+    <p>{{ outputCapitals }}</p>
+    <p>{{ outputDashes }}</p>
 </div>
 {% endblock %}

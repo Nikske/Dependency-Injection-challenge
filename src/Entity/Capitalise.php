@@ -4,13 +4,10 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-interface transform {
-    public function transform($string);
-}
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CapitaliseRepository")
  */
-class Capitalise implements transform {
+class Capitalise implements TransformInterface {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -22,7 +19,11 @@ class Capitalise implements transform {
         return $this->id;
     }
 
-    public function transform($string) {
-        // TODO: Implement transform() method.
+    public function transform( string $string) {
+        $transformed = "";
+        foreach(str_split($string) as $index => $char) {
+            $transformed .= ($index % 2) ? strtolower($char) : strtoupper($char);
+        }
+        return $transformed;
     }
 }

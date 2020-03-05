@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\DashesRepository")
  */
-class Dashes implements transform {
+class Dashes implements TransformInterface {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -19,7 +19,8 @@ class Dashes implements transform {
         return $this->id;
     }
 
-    public function transform($string) {
-        // TODO: Implement transform() method.
+    public function transform( string $string) {
+        $string = str_replace(' ', '-', $string);
+        return $string;
     }
 }
