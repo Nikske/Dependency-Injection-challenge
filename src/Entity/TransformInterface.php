@@ -5,5 +5,5 @@ namespace App\Entity;
 
 
 interface TransformInterface {
-    public function transform( string $string);
+    public function transform(string $string);
 }

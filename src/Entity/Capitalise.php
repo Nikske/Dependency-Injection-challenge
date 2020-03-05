@@ -19,7 +19,7 @@ class Capitalise implements TransformInterface {
         return $this->id;
     }
 
-    public function transform( string $string) {
+    public function transform(string $string) {
         $transformed = "";
         foreach(str_split($string) as $index => $char) {
             $transformed .= ($index % 2) ? strtolower($char) : strtoupper($char);

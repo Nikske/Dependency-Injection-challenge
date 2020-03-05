@@ -19,7 +19,7 @@ class Dashes implements TransformInterface {
         return $this->id;
     }
 
-    public function transform( string $string) {
+    public function transform(string $string) {
         $string = str_replace(' ', '-', $string);
         return $string;
     }
