@@ -10,15 +10,15 @@
 
 <div class="example-wrapper">
     <form method="post">
-        <label for="capitaliser">Xbox live username transformer:</label>
-        <input type="text" id="capitaliser" name ="capitaliser">
-        <br>
-        <label for="dasher">Spaces to dashes:</label>
-        <input type="text" id="dasher" name="dasher">
+        <label for="input">Enter a phrase or word:</label>
+        <input type="text" id="input" name ="input">
+        <select name="dropdown">
+            <option value="capitaliser">Xbox live username</option>
+            <option value="dasher">Space removal program</option>
+        </select>
         <button type="submit">GO</button>
     </form>
 
-    <p>{{ outputCapitals }}</p>
-    <p>{{ outputDashes }}</p>
+    <p>{{ output }}</p>
 </div>
 {% endblock %}
